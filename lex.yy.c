@@ -285,11 +285,12 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 5
-#define YY_END_OF_BUFFER 6
-static yyconst short int yy_accept[11] =
+#define YY_NUM_RULES 13
+#define YY_END_OF_BUFFER 14
+static yyconst short int yy_accept[19] =
     {   0,
-        3,    3,    6,    4,    1,    3,    2,    3,    2,    0
+        4,    4,   14,   12,    1,   10,    8,    9,    6,    4,
+        5,    7,    2,   11,    0,    2,    3,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -297,13 +298,13 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    3,    1,    1,    1,    1,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    3,    1,    1,    4,
+        5,    6,    7,    1,    8,    9,   10,   11,   11,   11,
+       11,   11,   11,   11,   11,   11,   11,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,   12,    1,    1,    1,    1,    1,    1,
 
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -324,33 +325,36 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[5] =
+static yyconst int yy_meta[13] =
     {   0,
-        1,    1,    2,    3
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1
     } ;
 
-static yyconst short int yy_base[13] =
+static yyconst short int yy_base[19] =
     {   0,
-        0,    0,    7,    8,    8,    0,    0,    8,    0,    8,
-        4,    2
+        0,    0,   17,   18,   18,   18,   18,   18,   18,   18,
+       18,   18,    4,   18,    5,    0,    3,   18
     } ;
 
-static yyconst short int yy_def[13] =
+static yyconst short int yy_def[19] =
     {   0,
-       10,    1,   10,   10,   10,   11,   12,   10,   12,    0,
-       10,   10
+       18,    1,   18,   18,   18,   18,   18,   18,   18,   18,
+       18,   18,   18,   18,   18,   13,   18,    0
     } ;
 
-static yyconst short int yy_nxt[13] =
+static yyconst short int yy_nxt[31] =
     {   0,
-        4,    5,    6,    7,    9,    8,   10,    3,   10,   10,
-       10,   10
+        4,    5,    6,    7,    8,    9,   10,   11,    4,   12,
+       13,   14,   15,   17,   16,   17,   18,    3,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18,   18
     } ;
 
-static yyconst short int yy_chk[13] =
+static yyconst short int yy_chk[31] =
     {   0,
-        1,    1,    1,    1,   12,   11,    3,   10,   10,   10,
-       10,   10
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,   13,   17,   13,   15,    3,   18,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18,   18
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -371,7 +375,7 @@ char *yytext;
 #include<stdlib.h>
 #include<string.h>
 
-#line 375 "lex.yy.c"
+#line 379 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -525,7 +529,9 @@ YY_DECL
 #line 12 "archivo.l"
 
 
-#line 529 "lex.yy.c"
+
+
+#line 535 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -576,13 +582,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 11 )
+				if ( yy_current_state >= 19 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 8 );
+		while ( yy_base[yy_current_state] != 18 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -610,30 +616,70 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "archivo.l"
-{;}
+#line 16 "archivo.l"
+{;}/* Reconocimiento de los Simbolos de la Gramatica */
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "archivo.l"
+#line 17 "archivo.l"
 {printf("%s ",yytext); fputs("Entero\n",yyout);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "archivo.l"
-{printf("%s ",yytext); fprintf(yyout,"SUMA\n");}
+#line 18 "archivo.l"
+{printf("%s ",yytext); fputs("Decimal\n",yyout);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "archivo.l"
-{;}
+#line 19 "archivo.l"
+{printf("%s ",yytext); fprintf(yyout,"SUMA\n");}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 19 "archivo.l"
+#line 20 "archivo.l"
+{printf("%s ",yytext); fprintf(yyout,"RESTA\n");}
+	YY_BREAK
+case 6:
+YY_RULE_SETUP
+#line 21 "archivo.l"
+{printf("%s ",yytext); fprintf(yyout,"MULTIPLICACION\n");}
+	YY_BREAK
+case 7:
+YY_RULE_SETUP
+#line 22 "archivo.l"
+{printf("%s ",yytext); fprintf(yyout,"DIVISION\n");}
+	YY_BREAK
+case 8:
+YY_RULE_SETUP
+#line 23 "archivo.l"
+{printf("%s ",yytext); fprintf(yyout,"ABREPARENTESIS\n");}
+	YY_BREAK
+case 9:
+YY_RULE_SETUP
+#line 24 "archivo.l"
+{printf("%s ",yytext); fprintf(yyout,"CIERRAPARENTESIS\n");}
+	YY_BREAK
+case 10:
+YY_RULE_SETUP
+#line 25 "archivo.l"
+{printf("%s ",yytext); fprintf(yyout,"MODULO\n");}
+	YY_BREAK
+case 11:
+YY_RULE_SETUP
+#line 26 "archivo.l"
+{printf("%s ",yytext); fprintf(yyout,"POTENCIA\n");}
+	YY_BREAK
+case 12:
+YY_RULE_SETUP
+#line 27 "archivo.l"
+{;}
+	YY_BREAK
+case 13:
+YY_RULE_SETUP
+#line 29 "archivo.l"
 ECHO;
 	YY_BREAK
-#line 637 "lex.yy.c"
+#line 683 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -925,7 +971,7 @@ static yy_state_type yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 11 )
+			if ( yy_current_state >= 19 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -960,11 +1006,11 @@ yy_state_type yy_current_state;
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 11 )
+		if ( yy_current_state >= 19 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 10);
+	yy_is_jam = (yy_current_state == 18);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -1519,14 +1565,54 @@ int main()
 	return 0;
 	}
 #endif
-#line 19 "archivo.l"
+#line 29 "archivo.l"
+
+
+/* Bloque Principal */
+
+/* Se realizan las verificaciones para los 5 posibles errores*/
+
+/* 1: Programa sin parametros */
+/* 2: Programa con 1 parametro faltante */
+/* 3: Programa con mas de 2 parametros */
+/* 4: Programa con Archivo de entrada no existente*/
+/* 5: Programa con Archivo de salida existente*/
+
+/* El Funcionamiento correcto del programa ocurre cuando se usa:*/
+/* Uso : archivo.exe entrada.txt salida.txt*/
 
 
 int main(int argc,char *argv[]){
 
-    yyin = fopen("entrada.txt","r");
+    if(argc == 1){
+        fprintf(stderr, "Error: Faltan Parámetros\n");
+        fprintf(stderr, "Uso : archivo.exe entrada.txt salida.txt\n");
+        return 1;
+    }
+    if(argc == 2){
+        fprintf(stderr, "Error: Falta Parámetro\n");
+        fprintf(stderr, "Uso : archivo.exe entrada.txt salida.txt\n");
+        return 4;
+    }
+    else if(argc > 3){
+        fprintf(stderr, "Error: Demasiados Parámetros\n");
+        fprintf(stderr, "Uso : archivo.exe entrada.txt salida.txt\n");
+        return 5;
+    }
+
+    yyin = fopen(argv[1], "r");
+    if (yyin == NULL) {
+        fprintf(stderr, "Error : El archivo de entrada no existe: %s\n", argv[1]);
+        return 2;
+    }
+
+    if (yyout = fopen(argv[2], "r")) {
+        fclose(yyout);
+        fprintf(stderr, "Error : El archivo de salida ya existe: %s\n", argv[2]);
+        return 3;
+    }
     if(yyin!=NULL){
-        yyout = fopen("salida.txt","w");
+        yyout = fopen(argv[2],"w");
         yylex();
         fclose(yyin);
         fclose(yyout);

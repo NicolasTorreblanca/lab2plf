@@ -1,3 +1,0 @@
-Entero
-SUMA
-Entero
