@@ -16,14 +16,33 @@ NUMEROS [0-9]
 \n {;}/* Reconocimiento de los Simbolos de la Gramatica */
 {NUMEROS}+ {printf("%s ",yytext); fputs("Entero\n",yyout);}
 {NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Decimal\n",yyout);}
-"+"{0,1} {printf("%s ",yytext); fprintf(yyout,"SUMA\n");}
-"-"{0,1} {printf("%s ",yytext); fprintf(yyout,"RESTA\n");}
-"*"{0,1} {printf("%s ",yytext); fprintf(yyout,"MULTIPLICACION\n");}
-"/"{0,1} {printf("%s ",yytext); fprintf(yyout,"DIVISION\n");}
-"("{0,1} {printf("%s ",yytext); fprintf(yyout,"ABREPARENTESIS\n");}
-")"{0,1} {printf("%s ",yytext); fprintf(yyout,"CIERRAPARENTESIS\n");}
-"%"{0,1} {printf("%s ",yytext); fprintf(yyout,"MODULO\n");}
-"^"{0,1} {printf("%s ",yytext); fprintf(yyout,"POTENCIA\n");}
+{NUMEROS}+"^"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+{NUMEROS}+"^"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+{NUMEROS}+"."{NUMEROS}+"^"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+{NUMEROS}+"."{NUMEROS}+"^"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+ {printf("%s ",yytext); fputs("Entero\n",yyout);}
+"-"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Decimal\n",yyout);}
+"-"{NUMEROS}+"^"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+"^"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+"."{NUMEROS}+"^"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+"."{NUMEROS}+"^"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+{NUMEROS}+"^""-"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+{NUMEROS}+"^""-"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+{NUMEROS}+".""-"{NUMEROS}+"^"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+{NUMEROS}+".""-"{NUMEROS}+"^"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+"^""-"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+"^""-"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+".""-"{NUMEROS}+"^"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+".""-"{NUMEROS}+"^"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"LOGDEC"{0,1} {printf("%s ",yytext); fprintf(yyout,"Logaritmo Decimal\n");}
+"+"{0,1} {printf("%s ",yytext); fprintf(yyout,"+\n");}
+"-"{0,1} {printf("%s ",yytext); fprintf(yyout,"-\n");}
+"*"{0,1} {printf("%s ",yytext); fprintf(yyout,"*\n");}
+"/"{0,1} {printf("%s ",yytext); fprintf(yyout,"/\n");}
+"("{0,1} {printf("%s ",yytext); fprintf(yyout,"AbreParentesis\n");}
+")"{0,1} {printf("%s ",yytext); fprintf(yyout,"CierraParentesis\n");}
+"%"{0,1} {printf("%s ",yytext); fprintf(yyout,"Modulo\n");}
+"^"{0,1} {printf("%s ",yytext); fprintf(yyout,"^\n");}
 . {;}
 
 %%
