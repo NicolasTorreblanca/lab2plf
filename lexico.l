@@ -28,21 +28,21 @@ NUMEROS [0-9]
 "-"{NUMEROS}+"."{NUMEROS}+"^"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
 {NUMEROS}+"^""-"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
 {NUMEROS}+"^""-"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
-{NUMEROS}+".""-"{NUMEROS}+"^"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
-{NUMEROS}+".""-"{NUMEROS}+"^"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+{NUMEROS}+"."{NUMEROS}+"^""-"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+{NUMEROS}+"."{NUMEROS}+"^""-"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
 "-"{NUMEROS}+"^""-"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
-"-"{NUMEROS}+"^""-"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
-"-"{NUMEROS}+".""-"{NUMEROS}+"^"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
-"-"{NUMEROS}+".""-"{NUMEROS}+"^"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+"^"{NUMEROS}+".""-"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+"."{NUMEROS}+"^""-"{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
+"-"{NUMEROS}+"."{NUMEROS}+"^""-"{NUMEROS}+"."{NUMEROS}+ {printf("%s ",yytext); fputs("Exponencial\n",yyout);}
 "LOGDEC"{0,1} {printf("%s ",yytext); fprintf(yyout,"Logaritmo Decimal\n");}
-"+"{0,1} {printf("%s ",yytext); fprintf(yyout,"+\n");}
-"-"{0,1} {printf("%s ",yytext); fprintf(yyout,"-\n");}
-"*"{0,1} {printf("%s ",yytext); fprintf(yyout,"*\n");}
-"/"{0,1} {printf("%s ",yytext); fprintf(yyout,"/\n");}
+"+"{0,1} {printf("%s ",yytext); fprintf(yyout,"Suma\n");}
+"-"{0,1} {printf("%s ",yytext); fprintf(yyout,"Resta\n");}
+"*"{0,1} {printf("%s ",yytext); fprintf(yyout,"Multiplicacion\n");}
+"/"{0,1} {printf("%s ",yytext); fprintf(yyout,"Division\n");}
 "("{0,1} {printf("%s ",yytext); fprintf(yyout,"AbreParentesis\n");}
 ")"{0,1} {printf("%s ",yytext); fprintf(yyout,"CierraParentesis\n");}
 "%"{0,1} {printf("%s ",yytext); fprintf(yyout,"Modulo\n");}
-"^"{0,1} {printf("%s ",yytext); fprintf(yyout,"^\n");}
+"^"{0,1} {printf("%s ",yytext); fprintf(yyout,"Potencia\n");}
 . {;}
 
 %%
